@@ -33,15 +33,15 @@ A1 = np.arange(SIZE)
 A2 = np.arange(SIZE)
 
 start = time.time()
-result = [(x,y) for x,y in zip(L1, L2)] #Modo alternativo per creare una lista con un ciclo in un unica riga
+result = [(x,y) for x,y in zip(L1, L2)] # Modo alternativo per creare una lista con un ciclo in un unica riga
 print((time.time() - start)*1000)
 
 start = time.time()
 result = A1+A2
 print((time.time() - start)*1000)
 print("********")
-#Noto i due risultati che effettuano la medesima operazione. Utilizzando NumPy e piu efficiente.
-#Si possono effettuare molte operazioni con NumPy
+# Noto i due risultati che effettuano la medesima operazione. Utilizzando NumPy e piu efficiente.
+# Si possono effettuare molte operazioni con NumPy
 
 # Find the dimension of the array:
 b = np.array([(1,2,3), (4,5,6)])
