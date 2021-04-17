@@ -100,45 +100,53 @@ print("Sottrazione-3:\n", mat1-3)
 print("Moltiplicazione*4:\n", mat1*4)
 print("Divisione/2:\n", mat1/2)
 
-"""
-mat2 = np.array([1,0,1,0,1])
-mat2 = mat1+mat2
-print(mat2)
-mat2 = mat2**2 #Elevamento potenza
-print(mat2)
+mat2 = np.array([1, 0, 1, 0, 1])
+mat2 = mat1+mat1
+print("Somma di due matrici:\n", mat2)
 
-print("*** Take the sin ***")
+# Elevamento a potenza
+mat2 = mat2**mat2
+print("Elevamento a potenza (mat2**mat2):\n", mat2)
+print("******************")
+
+print("*** Take Sin/Cos ***")
 sin = np.sin(mat2)
-print(sin)
-print("*** Take the cos ***")
+print("Sin: ", sin)
 cos = np.cos(mat2)
-print(cos)
+print("Cos: ", cos)
 
-# Find the determinant
-print("Find the determinant:")
-c = np.identity(3)
-rs = np.linalg.det(c)
-print(rs)
+# Find the determiant
+print("Find the determinant..")
+c = np.identity(4)
+d = np.linalg.det(c)
+print("np.linalg.det(c): ", d)
 
-#Statistics
-stats = np.array([[1,2,3],
-                  [4,5,6]])
-print(stats)
-mnr = np.min(stats, axis=1) #Stampa i minimi di ogni riga
-mnc = np.min(stats, axis=0) #Stampa i minimi di ogni riga
-print("min di ogni riga:", mnr)
-print("min di ogni col:", mnc)
-mx = np.max(stats) #stampa il massimo in generale
-print("max:", mx)
+# Statistics
+stats = np.array([(1, 2, 3),
+                  (4, 5, 6)])
+print("Matrice:\n", stats)
+mnr = np.min(stats, axis=1)
+print("Minimo di ogni riga:\n", mnr)
+mnc = np.min(stats, axis=0)
+print("Minimo di ogni colonna:\n", mnc)
 
-nsum = np.sum(stats,axis=0)
-print("sum ogni colonna:", nsum)
+mxr = np.max(stats, axis=1)
+print("Massimo di ogni riga:\n", mxr)
+mxc = np.max(stats, axis=0)
+print("Massimo di ogni colonna:\n", mxc)
+
+print("Massimo di tutta la matrice:\n", stats.max())
+
+nsumc = np.sum(stats, axis=0)
+print("Somma di ogni colonna:\n", nsumc)
 nsumr = np.sum(stats, axis=1)
-print("sum ogni riga:", nsumr)
-sumgen = np.sum(stats)
-print("sum totale:", sumgen)
+print("Somma di ogni riga:\n", nsumr)
+
+print("Somma di tutti gli elementi:\n", stats.sum())
+print("******************")
 
 
+"""
 print("*** REORGANIZING ARRAYS ***")
 before = np.array([[1,2,3,4],[5,6,7,8]])
 print(before)
