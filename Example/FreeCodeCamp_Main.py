@@ -145,38 +145,32 @@ print("Somma di ogni riga:\n", nsumr)
 print("Somma di tutti gli elementi:\n", stats.sum())
 print("******************")
 
+print("*** Reorganizing Arrays ***")
+before = np.array([(1, 2, 3, 4),
+                   (5, 6, 7, 9)])
+print("Before:\n", before)
+print("Shape: (print dimension)\n", before.shape)
 
-"""
-print("*** REORGANIZING ARRAYS ***")
-before = np.array([[1,2,3,4],[5,6,7,8]])
-print(before)
-print("shape:\n", before.shape)
+after = before.reshape((4, 2))
+print("After Reshaping:\n", after)
 
-after = before.reshape((4,2))
-print(after)
+print("******************")
+print("*** Vertical Stacking Vectors ***")
+v1 = np.array([1, 2, 3, 4])
+v2 = np.array([5, 6, 7, 9])
+print("vstack:\n", np.vstack([v1, v2, v2, v1]))
 
-print("*** Vertical stacking vectors ***")
-v1 = np.array([1,2,3,4])
-v2 = np.array([4,5,6,7])
-print(np.vstack([v1,v2,v2,v1]))
+print("*** Horizontal Stacking Vectors ***")
+print("hstack:\n", np.hstack([v1, v2, v2, v1]))
+print("******************")
 
-print("*** Horizontal stacking vectors ***")
-print(np.hstack([v1,v2,v2,v1]))
-
-### Miscellaneous
-print("*********************")
 print("*** Miscellaneous ***")
-print("*********************")
+ms = np.genfromtxt("data.txt", delimiter=',')
+print("Il file data contiene:\n", ms)
 
-ms = np.genfromtxt('data.txt', delimiter=',')
-print(ms)
+# Advanced Boolean Masking Indexing
+print("Return true o false if ms > 30", ms > 30)
 
-# Advanced Boolean Masking indexing
-print(ms>30) #return true or false
-print(ms[ms > 20]) #return il valore di tutti i > 20 sotto forma di array.
-
-# You can index with a list in NumPY
-aaa = np.array([1,2,3,4,5,6,7,8,9])
-print(aaa[[1,2,8]]) #ritorna gli elementi in indice 1,2,8
-
-"""
+# Can index with a list in NumPy
+kl = np.array([1,2,3,4,5,6,7,8,9])
+print("Return element in position (index) 1-2-8:\n", kl[[1, 2, 8]])
