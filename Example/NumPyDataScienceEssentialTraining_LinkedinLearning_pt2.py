@@ -78,3 +78,68 @@ np.copyto(d, c)
 print("copyto_d:\n", d)
 
 print("delete:\n", np.delete(d, 1, axis=0))     # Cancello la matrice con index 1
+print("**************")
+
+print("*** Join and Split Arrays ***")
+akk = np.array([[1, 2],
+                [3, 4]])
+bkk = np.array([[5, 6]])
+
+print("a:\n", akk)
+print("b:\n", bkk)
+together = np.concatenate((akk, bkk), axis=0)
+print("together:\n", together)
+print("together.shape:\n", together.shape)
+together[1, 1] = 5555
+print("together:\n", together)
+print("a:\n", akk)
+
+
+arrays = np.zeros((5, 3, 4))
+for n in range(5):
+    arrays[n] = np.random.randn(3, 4)
+
+print("Arrays:\n", arrays)
+stack0 = np.stack(arrays, axis=0)
+stack1 = np.stack(arrays, axis=1)
+stack2 = np.stack(arrays, axis=2)
+
+print("stack0:\n", stack0)
+print("stack1:\n", stack1)
+print("stack2:\n", stack2)
+print("**************")
+
+print("*** Array Shape Manipulation ***")
+my_start_array = np.array(np.arange(24))
+print("Arange:\n", my_start_array)
+print(my_start_array.shape)
+
+my_3_8_array = my_start_array.reshape((3, 8))
+print("my_3_8_array:\n", my_3_8_array)
+
+my_3_8_array[0, 0] = 123456
+print("my_start_array:\n", my_start_array)
+print("my_3_8_array:\n", my_3_8_array)
+
+# Ravel
+my_ravel_array = my_3_8_array.ravel()
+print("my_ravel_array (reverse of reshape)\n", my_ravel_array)
+print("**************")
+
+print("*** Rearranging Array Elements ***")
+my_start_array = np.array(np.arange(24))
+my_3_8_array = my_start_array.reshape((3, 8))
+my_2_3_4_array = my_3_8_array.reshape((2, 3, 4))
+
+print("my_3_8_array:\n", my_3_8_array)
+print("np.fliplr(my_3_8_array):\n", np.fliplr(my_3_8_array))
+print("my_2_3_4_array:\n", my_2_3_4_array)
+print("np.fliplr(my_2_3_4_array:\n", np.fliplr(my_2_3_4_array))
+
+print("*** Transpose-like Operation ***")
+print("transpose:\n", np.transpose(my_start_array))
+print("my_3_8_array:\n", my_3_8_array)
+print("my_3_8_array transpose:\n", np.transpose(my_3_8_array))
+print("my_2_3_4_array:\n", my_2_3_4_array)
+print("my_2_3_4_array transpose:\n", np.transpose(my_2_3_4_array))
+
