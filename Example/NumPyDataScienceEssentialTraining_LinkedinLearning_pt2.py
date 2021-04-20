@@ -39,3 +39,42 @@ print("dog_house:\n", dog_house)    # Allocate in difference cell of memory (ID 
 print("tree_house:\n", tree_house)
 print("*************")
 
+print("*** Adding and Removing Elements from NumPy Arrays ***")
+a = np.array(np.arange(24)).reshape(2, 3, 4)
+print("Array a:\n", a)
+
+b = np.append(a, [5, 6, 7, 8])
+print("Array b after append():\n", b)
+print("b.shape", b.shape)
+# Setting reshape
+b = b.reshape((7, 4))
+print("b:\n", b)
+
+c = np.array(np.arange(24)).reshape(2, 3, 4) * 10 + 3
+print("C:\n", c)
+print("**************")
+print("a, c, axis=0:\n", np.append(a, c, axis=0))
+
+# Per trovare la nuova dimensione di "c"
+sh0 = np.append(a, c, axis=0).shape
+print("Shape axis = 0:", sh0)
+
+sh1 = np.append(a, c, axis=1).shape
+print("Shape axis = 1:", sh1)
+
+sh2 = np.append(a, c, axis=2).shape
+print("Shape axis = 2:", sh2)
+print("**************")
+
+print("*** Insert Operation ***")
+after_insert_array = np.insert(c, 1, 444, axis=0)   # Ho inserito in index = 1 una matrice di "444"
+print("after_insert_array (c, 1, 444, axis=0):\n", after_insert_array)
+
+print("\nnp.insert(c, 1, 444, axis=1):\n", np.insert(c, 1, 444, axis=1))
+print("\nnp.insert(c, 1, 444, axis=2):\n", np.insert(c, 1, 444, axis=2))
+
+d = np.empty(c.shape)
+np.copyto(d, c)
+print("copyto_d:\n", d)
+
+print("delete:\n", np.delete(d, 1, axis=0))     # Cancello la matrice con index 1
