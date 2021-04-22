@@ -3,6 +3,8 @@
 import numpy as np
 import matplotlib as plt
 from numpy import random
+import pandas as pd
+from numpy import genfromtxt
 
 # NumPy Arrays: Creating Arrays
 list_1 = [1, 2, 3, 4, 5]                        # Lista Python
@@ -101,3 +103,26 @@ print("cp_arr_4:\n", cp_arr_4)
 
 print("*********************")
 print("*** BASIC MATH ***")
+arr_3 = np.array([1, 2, 3, 4])
+arr_4 = np.array([2, 4, 6, 8])
+
+print("Sottrazione:\n", arr_3 - arr_4)
+arr_6 = np.random.randint(100, size=(2, 3))
+print("arr_6:\n", arr_6)
+
+print("*********************")
+print("*** READING FROM FILE ***")
+ic_sales = pd.read_csv('addresses.csv').to_numpy()
+print("Addresses.CSV:\n", ic_sales)
+
+ic_sales_2 = genfromtxt('addresses.csv', delimiter=",")
+print("Addresses.CSV 2:\n", ic_sales_2)
+
+print("*********************")
+print("*** STATISTICS FUNCTIONS ***")
+sarr_1 = np.arange(1, 6)
+print(np.mean(sarr_1))
+print(np.median(sarr_1))
+
+print("*********************")
+print("*** TRIG FUNCTIONS ***")
