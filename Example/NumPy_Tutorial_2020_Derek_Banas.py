@@ -1,10 +1,11 @@
 # Rif: https://www.youtube.com/watch?v=8Y0qQEh7dJg&list=PLzoetWSUagaa8R9xdaBifysYwgQH0KBTZ&index=3&t=1309s
 
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from numpy import random
 import pandas as pd
 from numpy import genfromtxt
+from numpy import  linalg as LA
 
 # NumPy Arrays: Creating Arrays
 list_1 = [1, 2, 3, 4, 5]                        # Lista Python
@@ -126,3 +127,25 @@ print(np.median(sarr_1))
 
 print("*********************")
 print("*** TRIG FUNCTIONS ***")
+t_arr = np.linspace(-np.pi, np.pi, 200)
+plt.plot(t_arr, np.sin(t_arr))
+plt.plot(t_arr, np.cos(t_arr))
+# plt.show()
+plt.plot(t_arr, np.tan(t_arr))
+# plt.show()
+
+# y = cos(x) x = arcocs(y)
+np.arcsin(1)
+np.arccos(1)
+#plt.show()
+
+print("*********************")
+print("*** LINEAR ALGEBRA FUNCTIONS ***")
+arr_7 = np.random.randint(6, size=(2, 2))
+print("array_7:\n", arr_7)
+arr_8 = np.array([[2, 3],
+                  [4, 5]])
+print("array_8:\n", arr_8)
+# Matrix multiplication with Dot Product
+result_6_8_dot = np.dot(arr_7, arr_8)
+print("result_6_8_dot:\n", result_6_8_dot)
