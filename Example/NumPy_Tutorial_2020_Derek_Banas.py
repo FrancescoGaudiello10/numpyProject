@@ -147,5 +147,5 @@ arr_8 = np.array([[2, 3],
                   [4, 5]])
 print("array_8:\n", arr_8)
 # Matrix multiplication with Dot Product
-result_6_8_dot = np.dot(arr_7, arr_8)
-print("result_6_8_dot:\n", result_6_8_dot)
+result_7_8_dot = np.dot(arr_7, arr_8)
+print("result_6_8_dot:\n", result_7_8_dot)
