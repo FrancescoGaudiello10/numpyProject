@@ -319,3 +319,26 @@ b2 = np.array([True, False, True, False])
 print("************")
 print("*** TRICKS AND TIPS ***")
 print("Automatic Reshaping")
+# To change the dimensions of an array, you can omit one of
+# the sizes which will then be deduced automatically:
+a = np.arange(30)
+b = a.reshape((2, -1, 3))       # -1 means "whatever is need"
+print(b.shape)
+print(b)
+
+print("*** Vector Stacking ***")
+x = np.arange(0, 10, 2)
+y = np.arange(5)
+m = np.vstack([x, y])
+print("m:\n", m)
+xy = np.hstack([x, y])
+print("xy:\n", xy)
+
+print("*** HISTOGRAMS ***")
+rg = np.random.default_rng(1)
+mu, sigma = 2, 0.5
+v = rg.normal(mu, sigma, 10000)
+# Plot a normalized histogram with 50 bins
+plt.hist(v, bins=50, density=1)
+(n, bins) = np.histogram(v, bins=50, density=True)
+plt.plot(.5*(bins[1:]+bins[:-1]), n)
