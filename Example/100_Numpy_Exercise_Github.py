@@ -121,3 +121,54 @@ print("********************")
 
 # 20. Consider a (6, 7, 8) shape array, what is the index (x, y, z) of the 100th elements?
 print(np.unravel_index(99, (6, 7, 8)))
+print("********************")
+
+# 21. Create a checkerboard 8x8 matrix using the tile function
+z = np.tile(np.array([[0, 1],[1, 0]]), (4, 4))
+print("tile:\n", z)
+print("********************")
+
+# 22. Normalize a 5x5 random matrix (★☆☆)
+z = np.random.random((5, 5))
+z = (z - np.mean(z)) / (np.std(z))
+print("Normalize:\n", z)
+print("********************")
+
+# 23. Create a custom dtype that describes a color as four unsigned bytes (RGBA)
+color = np.dtype([("r", np.ubyte),
+                  ("g", np.ubyte),
+                  ("b", np.ubyte),
+                  ("a", np.ubyte)])
+print("********************")
+
+# 24. Multiply a 5x3 matrix by a 3x2 matrix (real matrix product)
+z = np.dot(np.ones((5, 3)), np.ones((3, 2)))
+print("Real matrix product:\n", z)
+z = np.ones((5, 3)) @ np.ones((3, 2))
+print("Real matrix product with @:\n", z)
+print("********************")
+
+# 25. Given a 1D array, negate all elements which are between 3 and 8, in place.
+z = np.arange(10)
+z[(3 < z) & (z < 8)] *= -1
+print("Negative:\n", z)
+print("********************")
+
+# 26. What is the output of the following script?
+print(sum(range(5), -1))
+print(sum(range(5), -1))
+
+# 30. How to find common values between two arrays? (★☆☆)
+Z1 = np.random.randint(0, 10, 10)
+Z2 = np.random.randint(0, 10, 10)
+print(np.intersect1d(Z1, Z2))
+
+# 33. How to get the dates of yesterday, today and tomorrow?
+yesterday = np.datetime64('today') - np.timedelta64(1)
+today     = np.datetime64('today')
+tomorrow  = np.datetime64('today') + np.timedelta64(1)
+
+# 40. Create a random vector of size 10 and sort it (★★☆)
+Z = np.random.random(10)
+Z.sort()
+print(Z)
