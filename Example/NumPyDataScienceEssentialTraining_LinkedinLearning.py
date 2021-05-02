@@ -90,14 +90,14 @@ print(my_3D_array)
 
 # Boolean Mask Array
 n = np.array([-7, -12, 4, 65, -76, 63, -6, 20, -5])
-print("Gli elementi dell'arrays ono divisibili per 7:")
+print("Gli elementi dell'array sono divisibili per 7:")
 zero_mod_7_mask = 0 == (n % 7)
 print(zero_mod_7_mask)
 sub_array = n[zero_mod_7_mask]
 print("Il sub_array booleano:", sub_array)
 print("***************")
 
-# Numpy Logicla Operators
+# Numpy Logical Operators
 mod_tes = 0 == (n % 7)
 positive_test = n > 0
 print("Positive_Test (solo positivi) = ", positive_test)
@@ -133,7 +133,7 @@ print("x.sum(axis=0):\n", x.sum(axis=0))     # axis=0 = colonne
 print("x.sum(axis=1):\n", x.sum(axis=1))     # axis=1 = righe
 print("***************")
 
-print("*** Creaing Structured Arrays ***")
+print("*** Creating Structured Arrays ***")
 person_data_def = [('name', 'S5'), ('height', 'f8'), ('weight', 'f8'), ('age', 'i8')]
 print("Person_data_def:", person_data_def)
 

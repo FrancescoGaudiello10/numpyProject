@@ -8,7 +8,7 @@ su_casa = mi_casa
 print(mi_casa is su_casa)
 
 print("mi_casa ID:", id(mi_casa))
-print("su_casa ID:",id(su_casa))
+print("su_casa ID:", id(su_casa))
 
 # value equality
 print("mi_casa == su_casa:\n", mi_casa == su_casa)
